@@ -1,0 +1,402 @@
+/* ======================================================
+   SHARED DESIGN SYSTEM — Midnight Logic
+   (Space Grotesk + Inter, Cyan + Violet dual accent)
+   ====================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;600&family=JetBrains+Mono:wght@400;700&display=swap');
+
+:root {
+  /* ── Dark theme (default) ── */
+  --bg:               #0d1117;
+  --bg-low:           #090d12;
+  --surface:          #161b22;
+  --surface-high:     #21262d;
+  --surface-highest:  #30363d;
+  --on-surface:       #e6edf3;
+  --on-surface-muted: #8b949e;
+  --outline:          #6e7681;
+  --outline-subtle:   #30363d;
+
+  /* Cyan primary */
+  --primary:          #4cd7f6;
+  --primary-dim:      #06b6d4;
+  --primary-glow:     rgba(76, 215, 246, 0.35);
+  --primary-glass:    rgba(76, 215, 246, 0.08);
+
+  /* Violet secondary */
+  --secondary:        #a78bfa;
+  --secondary-dim:    #7c3aed;
+  --secondary-glow:   rgba(167, 139, 250, 0.30);
+  --secondary-glass:  rgba(167, 139, 250, 0.08);
+
+  /* Glass */
+  --glass-bg:         rgba(22, 27, 34, 0.65);
+  --glass-border:     rgba(255, 255, 255, 0.06);
+
+  /* Gradient accent (cyan → violet) */
+  --gradient-accent:  linear-gradient(135deg, #4cd7f6 0%, #a78bfa 100%);
+
+  /* Typography */
+  --font-headline: 'Space Grotesk', sans-serif;
+  --font-body:     'Inter', sans-serif;
+  --font-mono:     'JetBrains Mono', monospace;
+
+  /* Layout */
+  --nav-height: 72px;
+  --page-max:   1200px;
+  --page-pad:   clamp(1.25rem, 5vw, 3rem);
+}
+
+/* ── Light theme overrides ── */
+[data-theme="light"] {
+  --bg:               #f0f4f8;
+  --bg-low:           #e2e8f0;
+  --surface:          #ffffff;
+  --surface-high:     #f8fafc;
+  --surface-highest:  #e2e8f0;
+  --on-surface:       #0f172a;
+  --on-surface-muted: #475569;
+  --outline:          #94a3b8;
+  --outline-subtle:   #cbd5e1;
+
+  --primary:          #0891b2;
+  --primary-dim:      #0e7490;
+  --primary-glow:     rgba(8, 145, 178, 0.25);
+  --primary-glass:    rgba(8, 145, 178, 0.08);
+
+  --secondary:        #7c3aed;
+  --secondary-dim:    #6d28d9;
+  --secondary-glow:   rgba(124, 58, 237, 0.20);
+  --secondary-glass:  rgba(124, 58, 237, 0.06);
+
+  --glass-bg:         rgba(255, 255, 255, 0.70);
+  --glass-border:     rgba(0, 0, 0, 0.07);
+
+  --gradient-accent:  linear-gradient(135deg, #0891b2 0%, #7c3aed 100%);
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--bg);
+  color: var(--on-surface);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* ---- Neural canvas background ---- */
+#bg-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+  transition: opacity 0.5s;
+}
+
+/* ---- Cursor glow (dual tone) ---- */
+.cursor-glow {
+  position: fixed;
+  width: 480px;
+  height: 480px;
+  background: radial-gradient(circle,
+    rgba(76, 215, 246, 0.07) 0%,
+    rgba(167, 139, 250, 0.04) 50%,
+    transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+  transform: translate(-50%, -50%);
+  transition: left 0.06s, top 0.06s;
+}
+[data-theme="light"] .cursor-glow {
+  background: radial-gradient(circle,
+    rgba(8, 145, 178, 0.06) 0%,
+    rgba(124, 58, 237, 0.03) 50%,
+    transparent 70%);
+}
+
+/* ======================================================
+   NAVBAR
+   ====================================================== */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: var(--nav-height);
+  padding: 0 var(--page-pad);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  background: rgba(9, 13, 18, 0.82);
+  backdrop-filter: blur(28px) saturate(160%);
+  border-bottom: 1px solid var(--outline-subtle);
+  transition: background 0.35s, border-color 0.35s;
+}
+[data-theme="light"] .navbar {
+  background: rgba(240, 244, 248, 0.85);
+}
+
+.nav-logo {
+  font-family: var(--font-headline);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--primary);
+  letter-spacing: 2px;
+  text-decoration: none;
+  transition: text-shadow 0.3s;
+}
+.nav-logo:hover { text-shadow: 0 0 18px var(--primary-glow); }
+
+.nav-links {
+  display: flex;
+  gap: 2.2rem;
+  align-items: center;
+}
+
+.nav-link {
+  font-family: var(--font-headline);
+  text-decoration: none;
+  color: var(--on-surface-muted);
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  position: relative;
+  transition: color 0.25s;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--primary);
+}
+.nav-link:hover::after,
+.nav-link.active::after { width: 100%; }
+
+/* Hamburger (mobile) */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--on-surface);
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
+/* ======================================================
+   GLASS CARD UTILITY
+   ====================================================== */
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px) saturate(160%);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+.glass-card:hover {
+  border-color: rgba(76, 215, 246, 0.28);
+  box-shadow:
+    0 0 28px rgba(76, 215, 246, 0.08),
+    0 0 60px rgba(167, 139, 250, 0.04);
+  transform: translateY(-2px);
+}
+[data-theme="light"] .glass-card:hover {
+  border-color: rgba(8, 145, 178, 0.30);
+  box-shadow:
+    0 4px 24px rgba(8, 145, 178, 0.10),
+    0 0 40px rgba(124, 58, 237, 0.05);
+}
+
+/* ======================================================
+   ACCENT TEXT & GRADIENT UTILITIES
+   ====================================================== */
+.accent-text {
+  color: var(--primary);
+}
+
+/* Shimmer gradient text — apply to headings for a wow effect */
+.shimmer-text {
+  background: var(--gradient-accent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-size: 200% auto;
+  animation: shimmer 4s linear infinite;
+}
+
+@keyframes shimmer {
+  0%   { background-position: 0% center; }
+  50%  { background-position: 100% center; }
+  100% { background-position: 0% center; }
+}
+
+/* Gradient border utility */
+.gradient-border {
+  position: relative;
+}
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: var(--gradient-accent);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+.gradient-border:hover::before { opacity: 1; }
+
+/* ======================================================
+   FOOTER
+   ====================================================== */
+.site-footer {
+  text-align: center;
+  padding: 2rem var(--page-pad);
+  border-top: 1px solid var(--outline-subtle);
+  color: var(--outline);
+  font-size: 0.82rem;
+  font-family: var(--font-mono);
+  letter-spacing: 0.5px;
+}
+
+/* ======================================================
+   TERMINAL COMPONENT
+   ====================================================== */
+.terminal-container {
+  background: #12181b;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--outline-subtle);
+  box-shadow: 0 0 40px rgba(76, 215, 246, 0.06);
+}
+.terminal-header {
+  background: var(--surface-highest);
+  padding: 0.65rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.dot { width: 11px; height: 11px; border-radius: 50%; }
+.red    { background: #ff5f56; }
+.yellow { background: #ffbd2e; }
+.green  { background: #27c93f; }
+.terminal-title {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--outline);
+  margin-left: 0.6rem;
+}
+.terminal-body {
+  padding: 1.4rem;
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+}
+.terminal-line { margin-bottom: 0.55rem; color: var(--on-surface-muted); }
+.prompt { color: var(--primary); margin-right: 0.9rem; }
+.highlight { color: #fff; font-weight: 700; }
+
+/* ======================================================
+   THEME TOGGLE BUTTON
+   ====================================================== */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 1rem;
+  background: var(--surface);
+  border: 1px solid var(--outline-subtle);
+  border-radius: 100px;
+  cursor: pointer;
+  font-family: var(--font-headline);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--on-surface-muted);
+  letter-spacing: 0.5px;
+  transition: all 0.3s;
+  user-select: none;
+  white-space: nowrap;
+}
+.theme-toggle:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  box-shadow: 0 0 16px var(--primary-glow);
+}
+.theme-toggle .toggle-icon { font-size: 1rem; transition: transform 0.4s; }
+.theme-toggle:hover .toggle-icon { transform: rotate(20deg); }
+
+/* ======================================================
+   SKILL TAGS
+   ====================================================== */
+.tag {
+  display: inline-block;
+  padding: 0.3rem 0.9rem;
+  background: var(--primary-glass);
+  border: 1px solid rgba(76, 215, 246, 0.25);
+  border-radius: 100px;
+  color: var(--primary);
+  font-family: var(--font-headline);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: background 0.25s, box-shadow 0.25s;
+}
+.tag:hover {
+  background: rgba(76, 215, 246, 0.15);
+  box-shadow: 0 0 10px var(--primary-glow);
+}
+
+/* ======================================================
+   RESPONSIVE
+   ====================================================== */
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .nav-links.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: var(--nav-height);
+    left: 0;
+    right: 0;
+    background: rgba(11, 15, 16, 0.97);
+    backdrop-filter: blur(20px);
+    padding: 1.5rem var(--page-pad) 2rem;
+    border-bottom: 1px solid var(--outline-subtle);
+    gap: 1.5rem;
+  }
+}

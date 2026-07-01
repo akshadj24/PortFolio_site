@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects | Akshad Joshi – AI & Data Science Engineer</title>
+  <meta name="description"
+    content="Explore AI and Data Science projects by Akshad Joshi — including LLM apps, neural networks, RAG pipelines, and more." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;600&family=JetBrains+Mono:wght@400;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="/src/shared.css" />
+  <link rel="stylesheet" href="/src/projects.css" />
+</head>
+
+<body>
+  <canvas id="bg-canvas"></canvas>
+  <div class="cursor-glow" id="cursor-glow"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="/index.html" class="nav-logo">AJ.</a>
+    <div class="nav-links" id="nav-links">
+      <a href="/index.html" class="nav-link" id="nav-home">Home</a>
+      <a href="/about.html" class="nav-link" id="nav-about">About</a>
+      <a href="/projects.html" class="nav-link active" id="nav-work">Work</a>
+      <a href="/index.html#contact" class="nav-link" id="nav-contact">Contact</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+      <span class="toggle-icon">🌙</span>
+      <span class="toggle-label">Dark</span>
+    </button>
+  </nav>
+
+  <!-- Page Hero -->
+  <section class="projects-hero">
+    <div class="projects-hero-inner">
+      <span class="page-label">// projects.py</span>
+      <h1 class="projects-hero-title">
+        Things I've <span class="accent-text">Built.</span>
+      </h1>
+      <p class="projects-hero-sub">
+        A collection of AI, ML & Data Science projects — from research experiments to real-world apps.
+      </p>
+
+      <!-- Filter Tabs -->
+      <div class="filter-tabs" id="filter-tabs">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="genai">Gen AI</button>
+        <button class="filter-btn" data-filter="ml">Machine Learning</button>
+        <button class="filter-btn" data-filter="dl">Deep Learning</button>
+        <button class="filter-btn" data-filter="data">Data Science</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Grid -->
+  <main class="projects-main">
+
+    <!-- ============================================================
+         PROJECT CARDS — ADD / DUPLICATE CARDS BELOW AS NEEDED
+         Each card has:
+           data-category="genai | ml | dl | data"   ← for filtering
+           .project-badge  → category pill
+           .project-img-wrap → screenshot / thumbnail area
+           .project-title  → project name
+           .project-desc   → short description
+           .project-stack  → tech tags
+           .project-links  → GitHub & Live Demo buttons
+         ============================================================ -->
+
+    <!-- ── POST ARCHITECT ── -->
+    <article class="project-card glass-card gradient-border" data-category="genai">
+      <div class="project-img-wrap">
+        <!-- Illustrated thumbnail -->
+        <div class="project-img-placeholder post-arch-thumb">
+          <div class="pa-thumb-inner">
+            <div class="pa-window">
+              <div class="pa-window-bar">
+                <span class="pa-dot" style="background:#ff5f56"></span>
+                <span class="pa-dot" style="background:#ffbd2e"></span>
+                <span class="pa-dot" style="background:#27c93f"></span>
+                <span class="pa-win-title">post_architect.py</span>
+              </div>
+              <div class="pa-window-body">
+                <p class="pa-line"><span class="pa-kw">topic</span> = <span class="pa-str">"AI in Healthcare"</span></p>
+                <p class="pa-line"><span class="pa-kw">lang</span> = <span class="pa-str">"Hinglish"</span></p>
+                <p class="pa-line pa-out">▶ Generating post<span class="pa-blink">_</span></p>
+              </div>
+            </div>
+            <div class="pa-badges">
+              <span class="pa-tag">🔗 LangChain</span>
+              <span class="pa-tag">🤖 Mistral AI</span>
+              <span class="pa-tag">⚡ FastAPI</span>
+            </div>
+          </div>
+        </div>
+        <span class="project-badge badge-genai">Gen AI</span>
+        <span class="project-badge badge-live" style="left:0.9rem; right:auto;">🟢 Live</span>
+      </div>
+      <div class="project-body">
+        <h2 class="project-title">Post Architect</h2>
+        <p class="project-desc">
+          Influencer-style LinkedIn content generator that mimics top creators like <strong>Muskan Handa</strong>
+          using <em>Few-Shot Prompting</em> &amp; LangChain. Generates bilingual posts (English &amp; Hinglish)
+          with strong hooks, strategic emojis, and white-space formatting — deployed live on Render.
+        </p>
+
+        <!-- Feature pills -->
+        <div class="project-features">
+          <span class="feature-pill">🎭 Persona Mimicry</span>
+          <span class="feature-pill">🌐 Bilingual (EN / Hinglish)</span>
+          <span class="feature-pill">📋 Copy to Clipboard</span>
+        </div>
+
+        <div class="project-stack">
+          <span class="chip">LangChain</span>
+          <span class="chip">Mistral AI</span>
+          <span class="chip">FastAPI</span>
+          <span class="chip">Few-Shot</span>
+          <span class="chip">Python</span>
+          <span class="chip">Render</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/akshadj24/Post_Generator" target="_blank" rel="noopener"
+            class="proj-btn proj-btn-ghost">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path
+                d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
+              <path d="M9 18c-4.51 2-5-2-7-2" />
+            </svg>
+            GitHub
+          </a>
+          <a href="https://post-generator-8dbf.onrender.com" target="_blank" rel="noopener"
+            class="proj-btn proj-btn-primary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+              <polyline points="15 3 21 3 21 9" />
+              <line x1="10" y1="14" x2="21" y2="3" />
+            </svg>
+            Live Demo
+          </a>
+        </div>
+      </div>
+    </article>
+
+
+    <!-- ── US FAKE NEWS DETECTION SYSTEM ── -->
+    <article class="project-card glass-card gradient-border" data-category="nlp">
+      <div class="project-img-wrap">
+
+        <!-- Illustrated thumbnail -->
+        <div class="project-img-placeholder fnd-thumb">
+          <div class="fnd-thumb-inner">
+
+            <!-- Pipeline Flow -->
+            <div class="sfp-pipeline">
+
+              <!-- Node 1 -->
+              <div class="sfp-node sfp-node-green">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M4 6h16M4 12h16M4 18h10" />
+                </svg>
+                <span>News Text</span>
+              </div>
+
+              <!-- Arrow -->
+              <div class="sfp-arrow">→</div>
+
+              <!-- Node 2 -->
+              <div class="sfp-node sfp-node-cyan">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <circle cx="6" cy="12" r="2" />
+                  <circle cx="12" cy="6" r="2" />
+                  <circle cx="18" cy="12" r="2" />
+                  <circle cx="12" cy="18" r="2" />
+                  <path d="M6 12h12M12 6v12" />
+                </svg>
+                <span>BiLSTM</span>
+              </div>
+
+              <!-- Arrow -->
+              <div class="sfp-arrow">→</div>
+
+              <!-- Node 3 -->
+              <div class="sfp-node sfp-node-violet">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M9 12l2 2 4-4" />
+                  <path d="M21 12c0 5-4 9-9 9s-9-4-9-9 4-9 9-9 9 4 9 9z" />
+                </svg>
+                <span>Real / Fake</span>
+              </div>
+
+            </div>
+
+            <!-- Result Chip -->
+            <div class="sfp-result">
+              <span class="sfp-label">📰 Prediction:</span>
+              <span class="sfp-disease">Fake News <span class="sfp-conf">91%</span></span>
+            </div>
+
+            <!-- Tech pills -->
+            <div class="pa-badges">
+              <span class="pa-tag sfp-tag-green">🧠 TensorFlow</span>
+              <span class="pa-tag">📊 NLP</span>
+              <span class="pa-tag">⚡ Streamlit</span>
+            </div>
+
+          </div>
+        </div>
+
+        <span class="project-badge badge-dl">Deep Learning</span>
+        <span class="project-badge badge-genai" style="left:0.9rem; right:auto;">NLP</span>
+
+      </div>
+
+      <div class="project-body">
+
+        <h2 class="project-title">US Fake News Detection System using BiLSTM</h2>
+
+        <p class="project-desc">
+          Deep Learning-based <strong>Natural Language Processing (NLP)</strong> system designed to classify
+          U.S. news articles as <strong>Real</strong> or <strong>Fake</strong> using a
+          <em>Bidirectional LSTM (BiLSTM)</em> neural network.
+          The application performs text preprocessing, tokenization, embeddings, and sequence modeling
+          to generate accurate real-time predictions through an interactive <em>Streamlit</em> web interface.
+        </p>
+
+        <!-- Feature pills -->
+        <div class="project-features">
+          <span class="feature-pill">📰 Real-Time Fake News Detection</span>
+          <span class="feature-pill">🧠 BiLSTM NLP Model</span>
+          <span class="feature-pill">🚀 Streamlit Deployment</span>
+        </div>
+
+        <!-- Tech Stack -->
+        <div class="project-stack">
+          <span class="chip">Python</span>
+          <span class="chip">TensorFlow</span>
+          <span class="chip">Keras</span>
+          <span class="chip">BiLSTM</span>
+          <span class="chip">NLP</span>
+          <span class="chip">Pandas</span>
+          <span class="chip">NumPy</span>
+          <span class="chip">Scikit-learn</span>
+          <span class="chip">Streamlit</span>
+        </div>
+
+        <!-- Project Links -->
+        <div class="project-links">
+
+          <!-- GitHub -->
+          <a href="https://github.com/akshadj24/Fake_news" target="_blank" rel="noopener"
+            class="proj-btn proj-btn-ghost">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path
+                d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
+              <path d="M9 18c-4.51 2-5-2-7-2" />
+            </svg>
+            GitHub
+          </a>
+
+          <!-- Live Demo -->
+          <a href="https://fakenews-nbenckct3ukauqlhmfuejx.streamlit.app/" target="_blank" rel="noopener"
+            class="proj-btn proj-btn-primary">
+
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+              <polyline points="15 3 21 3 21 9" />
+              <line x1="10" y1="14" x2="21" y2="3" />
+            </svg>
+
+            Live Demo
+          </a>
+
+        </div>
+
+      </div>
+    </article>
+
+    <!-- ── EDUPREDICT AI ── -->
+    <article class="project-card glass-card gradient-border" data-category="ml">
+      <div class="project-img-wrap">
+
+        <!-- Illustrated thumbnail -->
+        <div class="project-img-placeholder edu-thumb">
+          <div class="edu-thumb-inner">
+
+            <!-- Pipeline flow -->
+            <div class="sfp-pipeline">
+
+              <!-- Node 1 -->
+              <div class="sfp-node sfp-node-green">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M4 19.5V4.5" />
+                  <path d="M20 19.5V4.5" />
+                  <path d="M4 4.5h16" />
+                  <path d="M4 19.5h16" />
+                  <path d="M8 9h8" />
+                  <path d="M8 14h5" />
+                </svg>
+                <span>Student Data</span>
+              </div>
+
+              <!-- Arrow -->
+              <div class="sfp-arrow">→</div>
+
+              <!-- Node 2 -->
+              <div class="sfp-node sfp-node-cyan">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <circle cx="6" cy="12" r="2" />
+                  <circle cx="12" cy="6" r="2" />
+                  <circle cx="18" cy="12" r="2" />
+                  <circle cx="12" cy="18" r="2" />
+                  <path d="M6 12h12M12 6v12" />
+                </svg>
+                <span>ML Model</span>
+              </div>
+
+              <!-- Arrow -->
+              <div class="sfp-arrow">→</div>
+
+              <!-- Node 3 -->
+              <div class="sfp-node sfp-node-violet">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M9 12l2 2 4-4" />
+                  <path d="M21 12c0 5-4 9-9 9s-9-4-9-9 4-9 9-9 9 4 9 9z" />
+                </svg>
+                <span>Score Prediction</span>
+              </div>
+
+            </div>
+
+            <!-- Result chip -->
+            <div class="sfp-result">
+              <span class="sfp-label">📊 Predicted Score:</span>
+              <span class="sfp-disease">Math Score <span class="sfp-conf">87%</span></span>
+            </div>
+
+            <!-- Tech pills -->
+            <div class="pa-badges">
+              <span class="pa-tag sfp-tag-green">🤖 Scikit-Learn</span>
+              <span class="pa-tag">📈 Pandas</span>
+              <span class="pa-tag">⚡ Flask</span>
+            </div>
+
+          </div>
+        </div>
+
+        <span class="project-badge badge-dl">Machine Learning</span>
+        <span class="project-badge badge-genai" style="left:0.9rem; right:auto;">Prediction System</span>
+
+      </div>
+
+      <div class="project-body">
+
+        <h2 class="project-title">EduPredict AI – Student Math Score Predictor</h2>
+
+        <p class="project-desc">
+          End-to-End <strong>Machine Learning Web Application</strong> designed to predict a student’s
+          academic performance in mathematics using historical educational data.
+          The system analyzes factors such as <em>gender, parental education, lunch program,
+            test preparation, reading score, and writing score</em> to generate accurate predictions
+          through a trained <strong>Scikit-Learn</strong> model integrated with a modern Flask-based web application.
+        </p>
+
+        <!-- Feature pills -->
+        <div class="project-features">
+          <span class="feature-pill">📊 Academic Performance Prediction</span>
+          <span class="feature-pill">🧠 ML Prediction Pipeline</span>
+          <span class="feature-pill">🎨 Modern Glassmorphism UI</span>
+        </div>
+
+        <!-- Tech stack -->
+        <div class="project-stack">
+          <span class="chip">Python</span>
+          <span class="chip">Flask</span>
+          <span class="chip">Scikit-Learn</span>
+          <span class="chip">Pandas</span>
+          <span class="chip">NumPy</span>
+          <span class="chip">HTML</span>
+          <span class="chip">CSS</span>
+          <span class="chip">Machine Learning</span>
+          <span class="chip">Data Pipeline</span>
+        </div>
+
+        <!-- Project Links -->
+        <div class="project-links">
+
+          <!-- GitHub -->
+          <a href="https://github.com/akshadj24/ML_projects" target="_blank" rel="noopener"
+            class="proj-btn proj-btn-ghost">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path
+                d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
+              <path d="M9 18c-4.51 2-5-2-7-2" />
+            </svg>
+            GitHub
+          </a>
+
+          <!-- Live Demo -->
+          <a href="https://students-math-score.onrender.com" target="_blank" rel="noopener"
+            class="proj-btn proj-btn-primary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+              <polyline points="15 3 21 3 21 9" />
+              <line x1="10" y1="14" x2="21" y2="3" />
+            </svg>
+            Live Demo
+          </a>
+
+        </div>
+
+      </div>
+    </article>
+
+
+    <!-- ── CUSTOMER CHURN PREDICTION ── -->
+    <article class="project-card glass-card gradient-border" data-category="ml">
+      <div class="project-img-wrap">
+
+        <!-- Illustrated thumbnail -->
+        <div class="project-img-placeholder ccp-thumb">
+          <div class="ccp-thumb-inner">
+
+            <!-- Pipeline flow diagram -->
+            <div class="sfp-pipeline">
+
+              <!-- Node 1: Data -->
+              <div class="sfp-node sfp-node-green">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+                <span>Customer Data</span>
+              </div>
+
+              <!-- Arrow -->
+              <div class="sfp-arrow">→</div>
+
+              <!-- Node 2: ANN -->
+              <div class="sfp-node sfp-node-cyan">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <circle cx="6" cy="12" r="2" />
+                  <circle cx="12" cy="6" r="2" />
+                  <circle cx="18" cy="12" r="2" />
+                  <circle cx="12" cy="18" r="2" />
+                  <path d="M6 12h12M12 6v12" />
+                </svg>
+                <span>ANN Model</span>
+              </div>
+
+              <!-- Arrow -->
+              <div class="sfp-arrow">→</div>
+
+              <!-- Node 3: Prediction -->
+              <div class="sfp-node sfp-node-violet">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M9 12l2 2 4-4" />
+                  <path d="M21 12c0 5-4 9-9 9s-9-4-9-9 4-9 9-9 9 4 9 9z" />
+                </svg>
+                <span>Churn Prediction</span>
+              </div>
+
+            </div>
+
+            <!-- Result chip -->
+            <div class="sfp-result">
+              <span class="sfp-label">📊 Prediction:</span>
+              <span class="sfp-disease">Churn Likely <span class="sfp-conf">87%</span></span>
+            </div>
+
+            <!-- Tech pills -->
+            <div class="pa-badges">
+              <span class="pa-tag sfp-tag-green">🧠 TensorFlow</span>
+              <span class="pa-tag">📊 Pandas</span>
+              <span class="pa-tag">⚡ Streamlit</span>
+            </div>
+
+          </div>
+        </div>
+
+        <span class="project-badge badge-dl">Machine Learning</span>
+        <span class="project-badge badge-genai" style="left:0.9rem; right:auto;">ANN</span>
+      </div>
+
+      <div class="project-body">
+        <h2 class="project-title">Customer Churn Prediction System</h2>
+
+        <p class="project-desc">
+          End-to-end <strong>Artificial Neural Network (ANN)</strong> based system to predict whether a bank customer is
+          likely to churn or stay.
+          The project covers the complete ML pipeline including <em>data preprocessing, feature engineering, model
+            training</em> and
+          <em>deployment using Streamlit</em> for real-time predictions.
+        </p>
+
+        <!-- Feature pills -->
+        <div class="project-features">
+          <span class="feature-pill">📊 Data Analysis & EDA</span>
+          <span class="feature-pill">🧠 ANN Model Training</span>
+          <span class="feature-pill">🚀 Streamlit Deployment</span>
+        </div>
+
+        <div class="project-stack">
+          <span class="chip">Python</span>
+          <span class="chip">TensorFlow</span>
+          <span class="chip">Keras</span>
+          <span class="chip">Pandas</span>
+          <span class="chip">NumPy</span>
+          <span class="chip">Scikit-learn</span>
+          <span class="chip">Matplotlib</span>
+          <span class="chip">Seaborn</span>
+          <span class="chip">Streamlit</span>
+        </div>
+
+        <div class="project-links">
+          <a href="https://github.com/akshadj24/Customer_churn_prediction8" target="_blank" rel="noopener"
+            class="proj-btn proj-btn-ghost">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path
+                d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
+              <path d="M9 18c-4.51 2-5-2-7-2" />
+            </svg>
+            GitHub
+          </a>
+
+          <a href="#" target="_blank" rel="noopener" class="proj-btn proj-btn-primary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+              <polyline points="15 3 21 3 21 9" />
+              <line x1="10" y1="14" x2="21" y2="3" />
+            </svg>
+            Live Demo
+          </a>
+        </div>
+
+      </div>
+    </article>
+
+    <!-- ── SMART FARMER PORTAL ── -->
+    <article class="project-card glass-card gradient-border" data-category="dl">
+      <div class="project-img-wrap">
+        <!-- Illustrated thumbnail -->
+        <div class="project-img-placeholder sfp-thumb">
+          <div class="sfp-thumb-inner">
+
+            <!-- Pipeline flow diagram -->
+            <div class="sfp-pipeline">
+              <!-- Node 1: Image -->
+              <div class="sfp-node sfp-node-green">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <rect x="3" y="3" width="18" height="18" rx="2" />
+                  <circle cx="8.5" cy="8.5" r="1.5" />
+                  <path d="m21 15-5-5L5 21" />
+                </svg>
+                <span>Leaf Image</span>
+              </div>
+
+              <!-- Arrow -->
+              <div class="sfp-arrow">→</div>
+
+              <!-- Node 2: CNN -->
+              <div class="sfp-node sfp-node-cyan">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <circle cx="6" cy="12" r="2" />
+                  <circle cx="18" cy="6" r="2" />
+                  <circle cx="18" cy="18" r="2" />
+                  <path d="M8 12h8M16 6l-6 4.5M16 18l-6-4.5" />
+                </svg>
+                <span>MobileNetV3</span>
+              </div>
+
+              <!-- Arrow -->
+              <div class="sfp-arrow">→</div>
+
+              <!-- Node 3: RAG -->
+              <div class="sfp-node sfp-node-violet">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                </svg>
+                <span>RAG + LLM</span>
+              </div>
+            </div>
+
+            <!-- Disease output chip -->
+            <div class="sfp-result">
+              <span class="sfp-label">🍅 Detected:</span>
+              <span class="sfp-disease">Early Blight <span class="sfp-conf">94.2%</span></span>
+            </div>
+
+            <!-- Tech pills -->
+            <div class="pa-badges">
+              <span class="pa-tag sfp-tag-green">🌿 TensorFlow</span>
+              <span class="pa-tag">🔍 FAISS</span>
+              <span class="pa-tag">⚡ Streamlit</span>
+            </div>
+
+          </div>
+        </div>
+        <span class="project-badge badge-dl">Deep Learning</span>
+        <span class="project-badge badge-genai" style="left:0.9rem; right:auto;">Gen AI + RAG</span>
+      </div>
+
+      <div class="project-body">
+        <h2 class="project-title">Smart Farmer Portal</h2>
+        <p class="project-desc">
+          End-to-end AI system combining <strong>Computer Vision</strong> + <strong>Generative AI</strong>
+          to detect tomato plant diseases. A fine-tuned <em>MobileNetV3</em> classifies leaf images, then a
+          <em>RAG pipeline</em> (LangChain + Mistral AI) answers natural language queries on symptoms,
+          causes, prevention &amp; treatment using vector search.
+        </p>
+
+        <!-- Feature pills -->
+        <div class="project-features">
+          <span class="feature-pill">📷 Image Disease Detection</span>
+          <span class="feature-pill">🔍 RAG Q&amp;A Agent</span>
+          <span class="feature-pill">🧠 Transfer Learning</span>
+        </div>
+
+        <div class="project-stack">
+          <span class="chip">TensorFlow</span>
+          <span class="chip">MobileNetV3</span>
+          <span class="chip">LangChain</span>
+          <span class="chip">Mistral AI</span>
+          <span class="chip">FAISS</span>
+          <span class="chip">Astra DB</span>
+          <span class="chip">Streamlit</span>
+          <span class="chip">FastAPI</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/akshadj24/Fake_news8" target="_blank" rel="noopener"
+            class="proj-btn proj-btn-ghost">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path
+                d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
+              <path d="M9 18c-4.51 2-5-2-7-2" />
+            </svg>
+            GitHub
+          </a>
+          <a href="#" target="_blank" rel="noopener" class="proj-btn proj-btn-primary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+              <polyline points="15 3 21 3 21 9" />
+              <line x1="10" y1="14" x2="21" y2="3" />
+            </svg>
+            Live Demo
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- ── FOREST FIRE PREDICTION SYSTEM ── -->
+    <article class="project-card glass-card gradient-border" data-category="ml">
+      <div class="project-img-wrap">
+
+        <!-- Illustrated thumbnail -->
+        <div class="project-img-placeholder ffp-thumb">
+          <div class="ffp-thumb-inner">
+
+            <!-- Pipeline flow -->
+            <div class="sfp-pipeline">
+
+              <!-- Node 1 -->
+              <div class="sfp-node sfp-node-green">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M4 19.5V4.5" />
+                  <path d="M20 19.5V4.5" />
+                  <path d="M4 4.5h16" />
+                  <path d="M4 19.5h16" />
+                  <path d="M8 9h8" />
+                  <path d="M8 14h5" />
+                </svg>
+                <span>Weather Data</span>
+              </div>
+
+              <!-- Arrow -->
+              <div class="sfp-arrow">→</div>
+
+              <!-- Node 2 -->
+              <div class="sfp-node sfp-node-cyan">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <circle cx="6" cy="12" r="2" />
+                  <circle cx="12" cy="6" r="2" />
+                  <circle cx="18" cy="12" r="2" />
+                  <circle cx="12" cy="18" r="2" />
+                  <path d="M6 12h12M12 6v12" />
+                </svg>
+                <span>Ridge Regression</span>
+              </div>
+
+              <!-- Arrow -->
+              <div class="sfp-arrow">→</div>
+
+              <!-- Node 3 -->
+              <div class="sfp-node sfp-node-violet">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M9 12l2 2 4-4" />
+                  <path d="M21 12c0 5-4 9-9 9s-9-4-9-9 4-9 9-9 9 4 9 9z" />
+                </svg>
+                <span>Fire Risk</span>
+              </div>
+
+            </div>
+
+            <!-- Result chip -->
+            <div class="sfp-result">
+              <span class="sfp-label">🔥 Prediction:</span>
+              <span class="sfp-disease">High Risk <span class="sfp-conf">82%</span></span>
+            </div>
+
+            <!-- Tech pills -->
+            <div class="pa-badges">
+              <span class="pa-tag sfp-tag-green">📈 Scikit-Learn</span>
+              <span class="pa-tag">🌦️ Regression</span>
+              <span class="pa-tag">⚡ Flask</span>
+            </div>
+
+          </div>
+        </div>
+
+        <span class="project-badge badge-dl">Machine Learning</span>
+        <span class="project-badge badge-genai" style="left:0.9rem; right:auto;">Regression</span>
+
+      </div>
+
+      <div class="project-body">
+
+        <h2 class="project-title">Forest Fire Prediction using Machine Learning</h2>
+
+        <p class="project-desc">
+          Machine Learning-based prediction system designed to estimate the likelihood and severity of
+          forest fires using environmental and weather-related data.
+          The application analyzes factors such as <em>temperature, humidity, wind speed, rainfall,
+            and fire weather indices</em> to generate real-time fire risk predictions using
+          <strong>Ridge Regression</strong>, deployed through an interactive <strong>Flask</strong> web application.
+        </p>
+
+        <!-- Feature pills -->
+        <div class="project-features">
+          <span class="feature-pill">🔥 Real-Time Fire Risk Prediction</span>
+          <span class="feature-pill">📈 Regression-Based ML Models</span>
+          <span class="feature-pill">🌦️ Weather Data Analysis</span>
+        </div>
+
+        <!-- Tech stack -->
+        <div class="project-stack">
+          <span class="chip">Python</span>
+          <span class="chip">Scikit-Learn</span>
+          <span class="chip">Ridge Regression</span>
+          <span class="chip">Linear Regression</span>
+          <span class="chip">Pandas</span>
+          <span class="chip">NumPy</span>
+          <span class="chip">Flask</span>
+          <span class="chip">HTML/CSS</span>
+          <span class="chip">Pickle</span>
+        </div>
+
+        <!-- Project Links -->
+        <div class="project-links">
+
+          <!-- GitHub -->
+          <a href="https://github.com/akshadj24/forest-fire-prediction-ml" 8 target="_blank" rel="noopener"
+            class="proj-btn proj-btn-ghost">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path
+                d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
+              <path d="M9 18c-4.51 2-5-2-7-2" />
+            </svg>
+            GitHub
+          </a>
+
+          <!-- Live Demo -->
+          <a href="https://forest-fire-prediction-s7fb.onrender.com" target="_blank" rel="noopener"
+            class="proj-btn proj-btn-primary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+              <polyline points="15 3 21 3 21 9" />
+              <line x1="10" y1="14" x2="21" y2="3" />
+            </svg>
+            Live Demo
+          </a>
+
+        </div>
+
+      </div>
+    </article>
+
+
+    <!-- ── AI TRIP PLANNER (SAFAR) ── -->
+    <article class="project-card glass-card gradient-border" data-category="genai">
+      <div class="project-img-wrap">
+
+        <!-- Illustrated thumbnail -->
+        <div class="project-img-placeholder atp-thumb">
+          <div class="atp-thumb-inner">
+
+            <!-- Pipeline flow -->
+            <div class="sfp-pipeline">
+
+              <!-- Node 1: User Input -->
+              <div class="sfp-node sfp-node-green">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M12 12c2.761 0 5-2.239 5-5S14.761 2 12 2 7 4.239 7 7s2.239 5 5 5z" />
+                  <path d="M4 22c0-4 4-6 8-6s8 2 8 6" />
+                </svg>
+                <span>User Input</span>
+              </div>
+
+              <!-- Arrow -->
+              <div class="sfp-arrow">→</div>
+
+              <!-- Node 2: AI Planner -->
+              <div class="sfp-node sfp-node-cyan">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M9 12h6M12 9v6" />
+                  <circle cx="12" cy="12" r="9" />
+                </svg>
+                <span>AI Planner</span>
+              </div>
+
+              <!-- Arrow -->
+              <div class="sfp-arrow">→</div>
+
+              <!-- Node 3: Itinerary -->
+              <div class="sfp-node sfp-node-violet">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M8 6h13M8 12h13M8 18h13" />
+                  <circle cx="3" cy="6" r="1" />
+                  <circle cx="3" cy="12" r="1" />
+                  <circle cx="3" cy="18" r="1" />
+                </svg>
+                <span>Travel Plan</span>
+              </div>
+
+            </div>
+
+            <!-- Result -->
+            <div class="sfp-result">
+              <span class="sfp-label">🌍 Plan:</span>
+              <span class="sfp-disease">Goa Trip <span class="sfp-conf">3 Days</span></span>
+            </div>
+
+            <!-- Tech pills -->
+            <div class="pa-badges">
+              <span class="pa-tag sfp-tag-green">🤖 LangChain</span>
+              <span class="pa-tag">🧭 FastAPI</span>
+              <span class="pa-tag">⚡ React</span>
+            </div>
+
+          </div>
+        </div>
+
+        <span class="project-badge badge-genai">Gen AI</span>
+        <span class="project-badge badge-dl" style="left:0.9rem; right:auto;">AI Agent</span>
+      </div>
+
+      <div class="project-body">
+        <h2 class="project-title">AI Trip Planner – Safar</h2>
+
+        <p class="project-desc">
+          Intelligent travel planning system that generates personalized itineraries using <strong>AI agents</strong>
+          and
+          <strong>LLM-based reasoning</strong>. Users can input destination, budget, and preferences, and the system
+          dynamically creates optimized travel plans including places to visit, estimated costs, and schedules.
+        </p>
+
+        <!-- Feature pills -->
+        <div class="project-features">
+          <span class="feature-pill">🧠 AI Itinerary Generation</span>
+          <span class="feature-pill">💬 Travel Chatbot</span>
+          <span class="feature-pill">📍 Smart Destination Matching</span>
+        </div>
+
+        <div class="project-stack">
+          <span class="chip">Python</span>
+          <span class="chip">FastAPI</span>
+          <span class="chip">LangChain</span>
+          <span class="chip">LLM</span>
+          <span class="chip">React</span>
+          <span class="chip">JavaScript</span>
+          <span class="chip">CSS</span>
+          <span class="chip">REST API</span>
+        </div>
+
+        <div class="project-links">
+          <a href="https://github.com/akshadj24/Safar" target="_blank" rel="noopener" class="proj-btn proj-btn-ghost">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path
+                d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
+              <path d="M9 18c-4.51 2-5-2-7-2" />
+            </svg>
+            GitHub
+          </a>
+
+          <a href="https://safar-d55s.onrender.com" target="_blank" rel="noopener" class="proj-btn proj-btn-primary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+              <polyline points="15 3 21 3 21 9" />
+              <line x1="10" y1="14" x2="21" y2="3" />
+            </svg>
+            Live Demo
+          </a>
+        </div>
+
+      </div>
+    </article>
+  </main>
+
+
+
+  <!-- Empty state (shown when no cards match the filter) -->
+  <div class="empty-state hidden" id="empty-state">
+    <span class="empty-icon">🔍</span>
+    <p>No projects in this category yet. Check back soon!</p>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>© 2025 Akshad Joshi · Crafted with precision &amp; passion</p>
+  </footer>
+
+  <script type="module" src="/src/projects.js"></script>
+</body>
+
+</html>
