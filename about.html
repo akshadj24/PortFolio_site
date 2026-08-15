@@ -20,7 +20,7 @@
 <body>
   <canvas id="bg-canvas"></canvas>
   <div class="cursor-glow" id="cursor-glow"></div>
-
+  8
   <!-- Navbar -->
   <nav class="navbar">
     <a href="/index.html" class="nav-logo">AJ.</a>
@@ -53,18 +53,23 @@
       <div class="profile-card glass-card">
         <div class="profile-photo-wrapper">
           <div class="photo-clip" id="photo-dropzone">
-            <div class="upload-placeholder" id="upload-trigger">
+            <div class="upload-placeholder hidden" id="upload-trigger">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12" />
               </svg>
               <span>Upload Photo</span>
             </div>
-            <img src="" alt="Akshad Joshi" id="profile-img" class="hidden" />
+            <img
+              src="/Photo.jpg"
+              alt="Akshad Joshi"
+              id="profile-img"
+              onerror="this.style.display='none'; document.getElementById('upload-trigger').classList.remove('hidden');"
+            />
             <button id="clear-photo" class="clear-btn hidden" title="Remove Photo">&times;</button>
             <input type="file" id="photo-input" accept="image/*" class="hidden" />
           </div>
           <div class="glitch-overlay"></div>
-          <div class="floating-skills" id="floating-skills"></div>
+          <div class="floating-skills" id="floating-skills"></div> -->
         </div>
         <div class="profile-info">
           <h2 class="section-heading">Akshad Joshi</h2>
@@ -74,14 +79,14 @@
             gap between cutting-edge research and real-world applications. My focus lies in crafting scalable neural
             architectures, fine-tuning LLMs, and designing data pipelines that drive meaningful insights.
           </p>
-          <div class="profile-tags">
+          <!-- <div class="profile-tags">
             <span class="tag">Python</span>
             <span class="tag">Sklearn</span>
             <span class="tag">TensorFlow</span>
             <span class="tag">Matplotlib</span>
             <span class="tag">LLM </span>
             <span class="tag">Generative AI</span>
-          </div>
+          </div> -->
         </div>
       </div>
     </section>

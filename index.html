@@ -13,6 +13,8 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;600&family=JetBrains+Mono:wght@400;700&display=swap"
     rel="stylesheet" />
+  <link rel="stylesheet" href="/src/shared.css" />
+  <link rel="stylesheet" href="/src/style.css" />
 </head>
 
 <body>
@@ -39,22 +41,146 @@
     </nav>
 
     <!-- Home Hero -->
-    <section id="home" class="section">
-      <main class="hero-content">
-        <h1>Akshad Joshi</h1>
-        <div class="title-container">
-          <span class="title" id="typing-title"></span>
+    <section id="home" class="hero-main">
+      <div class="hero-main-inner">
+
+        <!-- ── LEFT CONTENT ── -->
+        <div class="hm-left">
+
+          <!-- Badge pill -->
+          <div class="hm-badge">
+            <span class="hm-badge-dot"></span>
+            I'M AN AI &amp; DATA ENGINEER
+          </div>
+
+          <!-- Headline -->
+          <h1 class="hm-title">
+            Hi, I'm <span class="hm-name">Akshad</span><br>
+            <span class="hm-subtitle-line">I build intelligent</span><br>
+            <span class="hm-subtitle-line">AI systems.</span>
+          </h1>
+
+          <!-- Tagline -->
+          <p class="hm-tagline">
+            I'm a passionate AI &amp; Data Science Engineer specializing in building
+            intelligent systems, fine-tuning LLMs, and designing real-world ML solutions.
+          </p>
+
+          <!-- CTA Buttons -->
+          <div class="hm-btns">
+            <a href="/projects.html" class="hm-btn-primary" id="cta-work">
+              View My Work
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="16" height="16"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="/src/assets/resume.pdf" download class="hm-btn-secondary" id="cta-cv">
+              Download CV
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="16" height="16"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+            </a>
+          </div>
+
+          <!-- Tech stack row -->
+          <div class="hm-tech">
+            <span class="hm-tech-label">TECHNOLOGIES I WORK WITH</span>
+            <div class="hm-tech-icons">
+              <!-- Python -->
+              <div class="hm-tech-icon" title="Python">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="28" height="28">
+                  <path d="M12 2C9.27 2 7.5 3.37 7.5 5.25V7h5.25v.75H5.625C3.7 7.75 2 9.28 2 12c0 2.72 1.7 4.25 3.625 4.25H7v-2c0-2.07 1.63-3.75 3.75-3.75h4.5c1.86 0 3.25-1.43 3.25-3.25V5.25C18.5 3.37 16.73 2 14 2h-2zm-1.5 1.5c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1z" fill="#3d8fc6"/>
+                  <path d="M17 8.75v2c0 2.07-1.63 3.75-3.75 3.75h-4.5C6.89 14.5 5.5 15.93 5.5 17.75V20.75C5.5 22.63 7.27 24 10 24h4c2.73 0 4.5-1.37 4.5-3.25v-1.75h-5.25V18.25h7.375C22.3 18.25 24 16.72 24 14c0-2.72-1.7-4.25-3.625-4.25H17zm-3.5 10.25c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1z" fill="#ffd745"/>
+                </svg>
+              </div>
+              <!-- TensorFlow -->
+              <div class="hm-tech-icon" title="TensorFlow">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="28" height="28">
+                  <path d="M1.292 5.856L11.54 0v24l-4.095-2.378V7.603l-6.153 3.56V5.856zm21.416 0L12.46 0v10.95l9.418-5.446-.17 5.428-9.248 5.36V24l4.095-2.378V14.47l6.153-3.56V5.856z" fill="#FF6F00"/>
+                </svg>
+              </div>
+              <!-- Scikit-learn -->
+              <div class="hm-tech-icon" title="Scikit-learn">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="28" height="28">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" fill="#F7931E"/>
+                  <path d="M12 6c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6z" fill="#29ABE2"/>
+                  <path d="M12 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z" fill="white"/>
+                </svg>
+              </div>
+              <!-- LangChain / GenAI -->
+              <div class="hm-tech-icon" title="LangChain">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="28" height="28">
+                  <rect width="24" height="24" rx="6" fill="#1B1B1D"/>
+                  <path d="M7 12h4m2 0h4M9 9l-2 3 2 3M15 9l2 3-2 3" stroke="#4cd7f6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <!-- Power BI / Data Viz -->
+              <div class="hm-tech-icon" title="Power BI">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="28" height="28">
+                  <rect width="24" height="24" rx="6" fill="#F2C811"/>
+                  <rect x="5" y="14" width="3" height="5" rx="1" fill="#1B1B1D"/>
+                  <rect x="10.5" y="10" width="3" height="9" rx="1" fill="#1B1B1D"/>
+                  <rect x="16" y="6" width="3" height="13" rx="1" fill="#1B1B1D"/>
+                </svg>
+              </div>
+              <!-- MySQL -->
+              <div class="hm-tech-icon" title="MySQL">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="28" height="28">
+                  <rect width="24" height="24" rx="6" fill="#00618A"/>
+                  <ellipse cx="12" cy="8" rx="6" ry="2.5" fill="#F29111"/>
+                  <path d="M6 8v3c0 1.38 2.69 2.5 6 2.5s6-1.12 6-2.5V8" stroke="#F29111" stroke-width="1.2"/>
+                  <path d="M6 11v3c0 1.38 2.69 2.5 6 2.5s6-1.12 6-2.5v-3" stroke="#F29111" stroke-width="1.2"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+
         </div>
-        <p class="tagline">Crafting intelligent solutions through data, neural architectures, and cutting-edge AI
-          engineering.</p>
-        <div class="hero-btns">
-          <a href="/projects.html" class="cta-button" id="cta-work">View My Work</a>
-          <a href="/about.html" class="scroll-down-btn">Explore More ↗</a>
+
+        <!-- ── RIGHT CONTENT ── -->
+        <div class="hm-right">
+
+          <!-- Profile photo circle -->
+          <div class="hm-photo-wrap">
+            <div class="hm-photo-glow"></div>
+            <div class="hm-photo-circle">
+              <!-- Static photo — place your image at /public/photo.jpg -->
+              <img
+                src="/Photo.jpg"
+                alt="Akshad Joshi"
+                id="hm-photo-img"
+                class="hm-photo-img"
+                onerror="this.style.display='none'; document.getElementById('hm-upload-zone').style.display='flex';"
+              />
+              <!-- Fallback upload zone (shown only if /photo.jpg is missing) -->
+              <div class="hm-upload-zone" id="hm-upload-zone" style="display:none;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="40" height="40"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.58-7 8-7s8 3 8 7"/></svg>
+                <span>Add photo.jpg to /public/</span>
+              </div>
+            </div>
+            <!-- Dot pattern accent -->
+            <div class="hm-dot-grid"></div>
+          </div>
+
+          <!-- Floating code card -->
+          <div class="hm-code-card glass-card">
+            <div class="hm-code-card-header">
+              <span class="hm-code-tag">&lt;/&gt; AI_Engineer</span>
+              <span class="hm-code-dot"></span>
+            </div>
+            <div class="hm-code-body">
+              <div class="hm-code-line"><span class="hm-c-kw">const</span> <span class="hm-c-var">engineer</span> <span class="hm-c-op">=</span> <span class="hm-c-br">{</span></div>
+              <div class="hm-code-line hm-indent"><span class="hm-c-key">name</span><span class="hm-c-op">:</span> <span class="hm-c-str">"Akshad"</span><span class="hm-c-op">,</span></div>
+              <div class="hm-code-line hm-indent"><span class="hm-c-key">focus</span><span class="hm-c-op">:</span> <span class="hm-c-str">"AI &amp; ML"</span><span class="hm-c-op">,</span></div>
+              <div class="hm-code-line hm-indent"><span class="hm-c-key">tools</span><span class="hm-c-op">:</span> <span class="hm-c-br">[</span><span class="hm-c-str">"TF"</span><span class="hm-c-op">,</span> <span class="hm-c-str">"LangChain"</span><span class="hm-c-br">]</span><span class="hm-c-op">,</span></div>
+              <div class="hm-code-line hm-indent"><span class="hm-c-key">goal</span><span class="hm-c-op">:</span> <span class="hm-c-str">"Build impactful</span></div>
+              <div class="hm-code-line hm-indent hm-indent2"><span class="hm-c-str"> AI solutions"</span></div>
+              <div class="hm-code-line"><span class="hm-c-br">}</span><span class="hm-c-op">;</span></div>
+            </div>
+          </div>
+
         </div>
-      </main>
+      </div>
     </section>
 
     <!-- Contact Section (kept for nav link) -->
+
     <section id="contact" class="section">
       <div class="contact-container">
         <div class="contact-header">
